@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * @author yzwall
  */
-class Solution {
+class Solution1 {
     /**
      * @param nums A set of numbers.
      * @return results A list of lists. All valid subsets.
@@ -53,8 +53,8 @@ class Solution {
 
 public class subsets {
 	public static void main(String[] args) {
-		Solution ss = new Solution();
-		int[] nums = new int[]{1,2,3};
+		Solution1 ss = new Solution1();
+		int[] nums = new int[]{1,2,2};
 		ArrayList<ArrayList<Integer>> results = ss.subsets(nums);
 		System.out.println(results.toString());
 	}

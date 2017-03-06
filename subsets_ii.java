@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
+ * http://www.lintcode.com/zh-cn/problem/subsets-ii/
  * 通过排序操作保证nums是有序集合，发生重复的条件是当前待选择元素与前一个邻居相等，
  * 且此时前一个邻居元素已经通过回溯被剔除子集(前一个邻居开头的子集已经搜索完毕)
  * @author yzwall
