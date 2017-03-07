@@ -1,3 +1,4 @@
+package DFS;
 /**
  * http://www.lintcode.com/zh-cn/problem/strstr/
  * @author yzwall

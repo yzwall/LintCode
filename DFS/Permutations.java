@@ -1,3 +1,4 @@
+package DFS;
 /**
  * http://www.lintcode.com/zh-cn/problem/permutations/
  * DFS+回溯 根据不重复集合生成全排列
