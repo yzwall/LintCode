@@ -1,7 +1,6 @@
 /**
  * http://www.lintcode.com/zh-cn/problem/search-a-2d-matrix/
  * 在有序二维数组中查找元素，排序数组中找最接近元素的变种
- * 未完成
  */
 package BinarySearch;
 

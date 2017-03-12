@@ -8,8 +8,9 @@ package BinarySearch;
  * @author yzwall
  */
 class Solution7 {
-
-	private int count;
+	
+	public int[] add;
+	
     /**
      * @param A an integer array sorted in ascending order
      * @param target an integer
@@ -21,46 +22,55 @@ class Solution7 {
     		return 0;
     	}
     	
-    	count = 0;
-    	binarySearch(A, target, 0, A.length - 1);
-    	return count;
+    	int start = 0;
+    	int end = A.length - 1;
+    	
+    	return binarySearchCount(A, start ,end, target);
     }
-    
-	private void binarySearch(int[] A, int target, int start, int end) {
-		if(! (start <= end)) {
-			if(A[start] == target) {
+
+	private int binarySearchCount(int[] A, int start, int end, int target) {
+		int count = 0;
+		
+		// 递归出口
+		if(!(start + 1 < end)) {
+			if (A[start] == target) {
 				count++;
-				return;
 			} 
-			if(A[end] == target) {
+			if (A[end] == target) {
 				count++;
-				return;
 			}
-			return;
+			return count;
 		}
-		
+
+		// 分治
 		int mid = start + (end - start) / 2;
-		if(A[mid] == target) {
+		if (A[mid] == target) {
 			count++;
-			binarySearch(A, target, start, mid);
-			binarySearch(A, target, mid, end);
+			count += binarySearchCount(A, start, mid, target); 
+			count += binarySearchCount(A, mid, end, target);
 		} else if(A[mid] < target) {
-			binarySearch(A, target, mid, end);
+			count +=  binarySearchCount(A, mid, end, target); 
 		} else {
-			binarySearch(A, target, start, mid);
+			count +=  binarySearchCount(A, start, mid, target);
 		}
 		
+		// 合并
+		return count;
 	}
-    
 }
 
 public class TotalOccurrence {
 
 	public static void main(String[] args) {
 		
-		int[] A = new int[]{3,3,3,4,5};
-		System.out.println(new Solution7().totalOccurrence(A, 3));
-
+		int[] A = new int[]{1, 2, 2, 4, 5};
+		Solution7 testCase = new Solution7();
+		System.out.println(testCase.totalOccurrence(A, 2));
+		
+		/*for(int i = 0; i < testCase.add.length; i++) {
+			System.out.println(i + " " + testCase.add[i]);
+		}*/
+		
 	}
 
 }
