@@ -3,7 +3,7 @@
  * 二分法查找最大在有序数组中找到最接近元素
  * 最接近元素 = Min(MinMax中最后出现元素, MaxMin中最先出现元素)
  */
-package BinarySearch;
+package binarysearch;
 
 /**
  * @author yzwall
@@ -63,7 +63,7 @@ class Solution {
 	}
 }
 
-public class ClosestNumber {
+public class ClosestNumber_459 {
 
 	public static void main(String[] args) {
 		

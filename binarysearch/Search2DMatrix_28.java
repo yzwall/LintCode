@@ -2,7 +2,7 @@
  * http://www.lintcode.com/zh-cn/problem/search-a-2d-matrix/
  * 在有序二维数组中查找元素，排序数组中找最接近元素的变种
  */
-package BinarySearch;
+package binarysearch;
 
 /**
  * 列中二分找出第0列中target的maxmin行坐标，
@@ -106,7 +106,7 @@ class Solution6 {
 }
 
 
-public class Search2DMatrix {
+public class Search2DMatrix_28 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

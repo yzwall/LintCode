@@ -2,7 +2,7 @@
  * www.lintcode.com/zh-cn/problem/classical-binary-search/
  * O(n)±©Á¦·¨£¬2.4s
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution2 {
     /**
@@ -27,7 +27,7 @@ class Solution2 {
 }
 
 
-public class FindPositionBruteForce {
+public class FindPositionBruteForce_457 {
 
 	public static void main(String[] args) {
 		

@@ -4,7 +4,7 @@
  * 需考虑跳出二分循环体的情况
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution13 {
     /**
@@ -45,7 +45,7 @@ class Solution13 {
 }
 
 
-public class FindMinRotatedSortedArray {
+public class FindMinRotatedSortedArray_159 {
 
 	public static void main(String[] args) {
 		int[] nums = new int[]{1};

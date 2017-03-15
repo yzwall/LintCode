@@ -2,7 +2,7 @@
  * http://www.lintcode.com/zh-cn/problem/last-position-of-target/
  * 二分法查找元素出现最后一个位置，九章算法二分模板
  */
-package BinarySearch;
+package binarysearch;
 
 /**
  * @author yzwall
@@ -51,7 +51,7 @@ class Solution5 {
     }
 }
 
-public class FindLastPosition {
+public class FindLastPosition_458 {
 
 	public static void main(String[] args) {
 		

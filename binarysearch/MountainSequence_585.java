@@ -3,7 +3,7 @@
  * @author yzwall
  */
 
-package BinarySearch;
+package binarysearch;
 
 class Solution11 {
 	/**
@@ -61,7 +61,7 @@ class Solution11 {
 	}
 }
 
-public class MountainSequence {
+public class MountainSequence_585 {
 
 	public static void main(String[] args) {
 		int[] nums = new int[]{10, 9, 8, 7};

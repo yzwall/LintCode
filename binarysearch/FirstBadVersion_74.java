@@ -3,7 +3,7 @@
  * http://www.lintcode.com/zh-cn/problem/maximum-number-in-mountain-sequence/
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution9 {
     /**
@@ -74,7 +74,7 @@ class Solution9 {
 }
 
 
-public class FirstBadVersion {
+public class FirstBadVersion_74 {
 	
 	public static void main(String[] args) {
 		int n = 10;

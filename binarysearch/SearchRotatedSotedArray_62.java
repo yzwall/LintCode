@@ -4,7 +4,7 @@
  * http://www.lintcode.com/en/problem/search-in-rotated-sorted-array/
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution14 {
     /** 
@@ -95,7 +95,7 @@ class Solution14 {
 	}
 }
 
-public class SearchRotatedSotedArray {
+public class SearchRotatedSotedArray_62 {
 
 	public static void main(String[] args) {
 		int[] nums = new int[]{1, 2, 3};

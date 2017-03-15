@@ -5,7 +5,7 @@
  * 
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution10 {
     /**
@@ -88,7 +88,7 @@ class ArrayReader {
 }
 
 
-public class SearchBigSortedArray {
+public class SearchBigSortedArray_447 {
 
 	public static void main(String[] args) {
 		System.out.println(new Solution10().searchBigSortedArray(new ArrayReader(), 1));

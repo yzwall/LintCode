@@ -3,7 +3,7 @@
  * 在极值序列中，二分思想找到任意极大值的位置
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution12 {
     /**
@@ -57,7 +57,7 @@ class Solution12 {
 	}
 }
 
-public class FindPeak {
+public class FindPeak_75 {
 
 	public static void main(String[] args) {
 		int[] nums = new int[]{1, 2, 1, 3, 4, 5, 7, 6};

@@ -3,7 +3,7 @@
  * 最小覆盖矩形，通过指定像素点(x,y)分别做四次二分逼近
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 class Solution15 {
 	private boolean[] row;	
@@ -191,7 +191,7 @@ class Solution15 {
 }
 
 
-public class SmallEclosingRectangle {
+public class SmallEclosingRectangle_600 {
 
 	public static void main(String[] args) {
 		char[][] image = {

@@ -2,7 +2,7 @@
  * http://www.lintcode.com/en/problem/search-a-2d-matrix-ii/
  * @author yzwall
  */
-package BinarySearch;
+package binarysearch;
 
 /**
  * @author yzwall
@@ -63,7 +63,7 @@ class Solution8 {
 	}
 }
 
-public class Search2DMatrixII {
+public class Search2DMatrixII_38 {
 
 	public static void main(String[] args) {
 		int[][] matrix = {{1, 3, 5, 7},
