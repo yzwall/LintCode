@@ -1,7 +1,7 @@
 package binarytree;
 
 // 二叉树节点定义
-class TreeNode {
+public class TreeNode {
 	public int val;
 	public TreeNode left;
 	public TreeNode right;
