@@ -3,6 +3,8 @@
 Debug
 .cproject
 .project
+.class
+.c
 
 # 过滤任何.rar格式文件，不考虑文件路径
 *.rar
