@@ -1,5 +1,5 @@
 /**
- * BFS求简单图（矩阵形式）两点间最短路径
+ * BFS求简单图（矩阵形式）两点间最短路径，逐层遍历，直到找到目标
  * 骑士每次只能走日字
  * http://www.lintcode.com/zh-cn/problem/knight-shortest-path/
  * @author yzwall
@@ -15,7 +15,6 @@ class Point {
     public Point(int a, int b) { x = a; y = b; }
 }
 
-
 class Solution4 {
 	private int ROW;
 	private int COLUMN;
@@ -25,7 +24,6 @@ class Solution4 {
      * @return the shortest path 
      */
 	public int shortestPath(boolean[][] grid, Point source, Point destination) {
-    	
     	if (grid == null || grid.length == 0) {
     		return 0;
     	}
@@ -39,41 +37,36 @@ class Solution4 {
     	
     	int[] deltaX = new int[]{1, 1, -1, -1, 2, 2, -2, -2};
     	int[] deltaY = new int[]{2, -2, 2, -2, 1, -1, 1, -1};
+    	int directNum = 8;
     	boolean[][] isVisited = new boolean[ROW][COLUMN];
     	
     	Queue<Point> queue = new ArrayDeque<>();
     	queue.offer(source);
     	isVisited[source.x][source.y] = true;
-    	int minPath = Integer.MAX_VALUE;
     	int path = 0;
     	
     	while (!queue.isEmpty()) {
     		int size = queue.size();
-//    		path++;
     		for (int i = 0; i < size; i++) {
     			Point head = queue.poll();
+    			if (isReached(head.x, head.y, destination)) {
+					// 找到目标
+					return path;
+				} 
     			// 遍历8个方向
-    			for (int j = 0; j < 8; j++) {
+    			for (int j = 0; j < directNum; j++) {
     				int xx = head.x + deltaX[j];
     				int yy = head.y + deltaY[j];
         			if (isValid(grid, isVisited, xx, yy)) {
-        				//System.out.printf("%d %d\n", xx, yy);
-        				if (isReached(xx, yy, source)) {
-        					// 找到目标
-        					minPath = Math.min(minPath, path);
-        					//path = 0;
-        				} else {
-        					// 中间步骤
-        					System.out.printf("%d %d %d\n", size, xx, yy);
-        					queue.offer(new Point(xx, yy));
-        					isVisited[xx][yy] = true;
-        				}
+    					queue.offer(new Point(xx, yy));
+    					isVisited[xx][yy] = true;
         			}
         		}
     		}
+    		// 逐层遍历，每层未遍历到，则路径长度+1
+    		path++;
     	}
-    	
-    	return minPath != Integer.MAX_VALUE ? minPath : -1;
+    	return -1;
     }
 	
 	private boolean checkBound(int x, int y) {
@@ -84,7 +77,7 @@ class Solution4 {
     	return true;
 	}
     
-    
+    // 检查grid[x][y]是否可以走
     private boolean isValid(boolean[][] grid, boolean[][] isVisited,
     					   	  int x, int y) {
     	if (!checkBound(x, y)) {
@@ -96,11 +89,11 @@ class Solution4 {
     	return false;
     }
     
-    private boolean isReached(int x, int y, Point source) {
-    	return x == source.x && y == source.y ? true : false;
+    // 检查是否遇到目标
+    private boolean isReached(int x, int y, Point dest) {
+    	return x == dest.x && y == dest.y ? true : false;
     }
 }
-
 
 
 
