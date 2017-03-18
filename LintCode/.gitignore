@@ -1,0 +1,13 @@
+﻿# 过滤Debug文件夹，不考虑文件路径
+.settings
+Debug
+.cproject
+.project
+#.c
+.class
+
+# 过滤任何.rar格式文件，不考虑文件路径
+*.rar
+
+
+
