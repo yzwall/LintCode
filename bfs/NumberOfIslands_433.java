@@ -34,6 +34,7 @@ class Solution2 {
     	COLUMN = grid[0].length;
     	int[] deltaX = new int[]{0, 0, -1, 1};
     	int[] deltaY = new int[]{-1, 1, 0, 0};
+    	int directNum = 4;
     	int totalCount = 0;
     	
     	boolean[][] isVisited = new boolean[ROW][COLUMN];
@@ -49,7 +50,7 @@ class Solution2 {
     					NodeInfo head = queue.poll();
     					isVisited[head.x][head.y] = true;
     					// ±éÀúÉÏÏÂ×óÓÒ
-    					for (int j = 0; j < 4; j++) {
+    					for (int j = 0; j < directNum; j++) {
         					if (isValid(grid, isVisited, head.x + deltaX[j], head.y + deltaY[j])) {
         						queue.offer(new NodeInfo(head.x + deltaX[j], head.y + deltaY[j]));
         					}

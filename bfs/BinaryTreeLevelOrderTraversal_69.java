@@ -1,5 +1,6 @@
 /**
  * 二叉树层序遍历，BFS保存每一层路径
+ * BFS层级遍历模板程序
  * http://www.lintcode.com/en/problem/binary-tree-level-order-traversal/
  * @author yzwall
  */
@@ -15,31 +16,32 @@ class Solution {
      * @return: Level order a list of lists of integer
      */
     public ArrayList<ArrayList<Integer>> levelOrder(TreeNode root) {
-    	ArrayList<ArrayList<Integer>> paths = new ArrayList<ArrayList<Integer>>();
+    	ArrayList<ArrayList<Integer>> levels = new ArrayList<ArrayList<Integer>>();
     	if (root == null) {
-    		return paths;
+    		return levels;
     	}
     	
     	Queue<TreeNode> queue = new ArrayDeque<TreeNode>();
     	queue.offer(root);
     	while (!queue.isEmpty()) {
-    		ArrayList<Integer> path = new ArrayList<Integer>();
+    		ArrayList<Integer> level = new ArrayList<Integer>();
     		// size 当前遍历层的节点个数
     		int size = queue.size();
+    		// 遍历当前层
     		for (int i = 0; i < size; i++) {
-        		TreeNode front = queue.poll();
-        		path.add(front.val);
+        		TreeNode head = queue.poll();
+        		level.add(head.val);
         		
-        		if (front.left != null) {
-        		    queue.offer(front.left);
+        		if (head.left != null) {
+        		    queue.offer(head.left);
         		}
-        		if (front.right != null) {
-        		    queue.offer(front.right);
+        		if (head.right != null) {
+        		    queue.offer(head.right);
         		}
     		}
-    		paths.add(new ArrayList<Integer>(path));
+    		levels.add(new ArrayList<Integer>(level));
     	}
-    	return paths;
+    	return levels;
     }
 }
 
