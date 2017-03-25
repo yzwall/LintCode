@@ -1,16 +1,14 @@
-package dfs;
 /**
  * http://www.lintcode.com/zh-cn/problem/permutations-ii/
  * https://leetcode.com/problems/permutations-ii/?tab=Description
  * DFS+回溯+剪枝，生成重复元素的全排列
+ * @author yzwall
  */
+package dfs;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author yzwall
- */
 class Solution6 {
 
     public List<List<Integer>> permuteUnique(int[] nums) {
@@ -68,6 +66,7 @@ class Solution6 {
 			helper(results, subset, nums, visit);
 			// pre 表示待回溯被剔除子集元素
 			pre = subset.get(subset.size() - 1);
+			// 回溯操作
 			subset.remove(subset.size() - 1);
 			visit[i] = false;	
 		}

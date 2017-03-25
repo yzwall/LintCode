@@ -1,14 +1,13 @@
-package dfs;
-import java.util.ArrayList;
-import java.util.Arrays;
-
 /**
  * http://www.lintcode.com/zh-cn/problem/subsets-ii/
  * 通过排序操作保证nums是有序集合，发生重复的条件是当前待选择元素与前一个邻居相等，
  * 且此时前一个邻居元素已经通过回溯被剔除子集(前一个邻居开头的子集已经搜索完毕)
  * @author yzwall
- *
  */
+package dfs;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 class Solution2 {
     /**
      * @param nums: A set of numbers.
@@ -46,7 +45,7 @@ class Solution2 {
 			 * nums[i] == nums[i-1] && i > startIndex 表示以num[i-1]开头的解集
 			 * 都已搜索完毕，且num[i-1]通过回溯操作被剔除subset
 			 */
-			if(i !=0 && nums[i] == nums[i-1] && i > startIndex) {
+			if(i != 0 && nums[i] == nums[i-1] && i > startIndex) {
 				// 剪枝操作，跳过num[i]，避免重复
 				continue;
 			}

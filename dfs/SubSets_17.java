@@ -1,14 +1,12 @@
 package dfs;
 /**
+ * DFS+回溯 
  * http://www.lintcode.com/problem/subsets/
- * DFS+回溯
+ * @author yzwall
  */
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/**
- * @author yzwall
- */
 class Solution1 {
     /**
      * @param nums A set of numbers.
@@ -36,9 +34,9 @@ class Solution1 {
      * @param subset 以startIndex开始的升序子集
      */
     private void getSubsets(ArrayList<Integer> subset,
-                                ArrayList<ArrayList<Integer>> results,
-                                int[] nums,
-                                int startIndex) {
+                            ArrayList<ArrayList<Integer>> results,
+                            int[] nums,
+                            int startIndex) {
         // 放入自身
         results.add(new ArrayList<Integer>(subset));
         for (int i = startIndex; i < nums.length; i++) {

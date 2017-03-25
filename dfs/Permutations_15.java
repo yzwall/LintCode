@@ -1,9 +1,9 @@
-package dfs;
 /**
- * http://www.lintcode.com/zh-cn/problem/permutations/
  * DFS+回溯 根据不重复集合生成全排列
+ * http://www.lintcode.com/zh-cn/problem/permutations/
  * @author yzwall
  */
+package dfs;
 import java.util.List;
 import java.util.ArrayList;
 
