@@ -1,29 +1,16 @@
 /**
  * http://www.lintcode.com/zh-cn/problem/binary-tree-inorder-traversal/
- * 二叉树中序遍历，经典遍历递归实现 & 分治法递归实现
+ * 二叉树中序遍历，经典遍历递归实现 & 分治法递归实现 & 非递归实现
  * @author yzwall
  */
-
 package binarytree;
-
+import java.util.ArrayDeque;
 import java.util.ArrayList;
 
-//// 二叉树节点定义
-//class TreeNode1 {
-//	public int val;
-//	public TreeNode1 left, right;
-//	public TreeNode1(int val) {
-//		this.val = val;
-//		this.left = this.right = null;
-//	}
-//}
-
-// 经典递归实现
+/**
+ * 二叉树中序遍历-经典递归实现
+ */
 class Solution3 {
-	 /**
-	  * @param root: The root of binary tree.
-	  * @return: inorder in ArrayList which contains node values.
-	  */
 	public ArrayList<Integer> inorderTraversal(TreeNode root) {
 	 	if (root == null) {
 	 		return new ArrayList<Integer>();
@@ -35,31 +22,24 @@ class Solution3 {
 	    return results;
 	}
  
-	 /**
-	  * 中序遍历经典递归实现，“左根右”
-	  */
 	private void traverse(TreeNode root, ArrayList<Integer> results) {
 		if (root == null) {
 			return;
 		}
-	     
+		
 	    // 遍历左子树
 	    traverse(root.left, results);
-	     
 	    // 遍历子树根节点
 	    results.add(root.val);	
-	     
 	    // 遍历右子树
 	    traverse(root.right, results);
 	}
 }
 
-// 分治法递归实现
+/**
+ * 二叉树中序遍历-分治法实现
+ */
 class Solution4 {
-	 /**
-	  * @param root: The root of binary tree.
-	  * @return: inorder in ArrayList which contains node values.
-	  */
 	public ArrayList<Integer> inorderTraversal(TreeNode root) {
 		ArrayList<Integer> results = new ArrayList<Integer>();
 	 	if (root == null) {
@@ -83,10 +63,47 @@ class Solution4 {
 }
 
 
-public class InorderTraversalRecursive_67 {
+/**
+ * 二叉树中序遍历-非递归实现
+ * 逆序入栈
+ */
+class Solution18 {
+	private class Pair {
+		TreeNode root;
+		boolean isVisited;
+		public Pair(TreeNode root, boolean isVisited) {
+			this.root = root;
+			this.isVisited = isVisited;
+		}
+	} 
+	
+	public ArrayList<Integer> inorderTraversal(TreeNode root) {
+		ArrayList<Integer> results = new ArrayList<Integer>();
+	 	if (root == null) {
+	 		return results;
+	    }
+	 	
+	 	ArrayDeque<Pair> stack = new ArrayDeque<>();
+	 	stack.push(new Pair(root, false));
+	 	while (!stack.isEmpty()) {
+	 		Pair top = stack.pop();
+	 		if (top.root == null) {
+	 			continue;
+	 		}
+	 		if (top.isVisited) {
+	 			results.add(top.root.val);
+	 		} else {
+	 			// 入栈顺序：右，根，左
+	 			stack.push(new Pair(top.root.right, false)); 
+	 			stack.push(new Pair(top.root, true));
+	 			stack.push(new Pair(top.root.left, false));
+	 		}
+	 	}
+	    return results;
+	}	
+}
 
+public class InorderTraversal_67 {
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 	}
-
 }
